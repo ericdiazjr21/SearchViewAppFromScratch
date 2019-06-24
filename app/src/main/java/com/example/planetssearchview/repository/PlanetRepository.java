@@ -17,7 +17,7 @@ public final class PlanetRepository {
 
     @SuppressLint("CheckResult")
     public void requestJsonFromRetrofit(NetworkInterface networkInterface) {
-        RetrofitSingleton.getSingleInstance()
+        RetrofitSingleton.getRetrofitSingleInstance()
                 .create(PlanetsService.class)
                 .getResponse()
                 .subscribeOn(Schedulers.io())
