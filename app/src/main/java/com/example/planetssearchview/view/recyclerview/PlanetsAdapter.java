@@ -1,4 +1,4 @@
-package com.example.planetssearchview.controller;
+package com.example.planetssearchview.view.recyclerview;
 
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
@@ -8,7 +8,7 @@ import android.view.ViewGroup;
 
 import com.example.planetssearchview.R;
 import com.example.planetssearchview.model.Planet;
-import com.example.planetssearchview.view.PlanetsViewHolder;
+import com.example.planetssearchview.view.recyclerview.PlanetsViewHolder;
 
 import java.util.List;
 

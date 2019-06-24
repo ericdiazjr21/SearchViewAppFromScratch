@@ -8,7 +8,7 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.SearchView;
 
 import com.example.planetssearchview.R;
-import com.example.planetssearchview.controller.PlanetsAdapter;
+import com.example.planetssearchview.view.recyclerview.PlanetsAdapter;
 import com.example.planetssearchview.model.Planet;
 import com.example.planetssearchview.network.NetworkInterface;
 import com.example.planetssearchview.repository.PlanetRepository;
@@ -55,8 +55,7 @@ public class MainActivity extends AppCompatActivity implements NetworkInterface 
             @Override
             public boolean onQueryTextChange(String s) {
                 List<Planet> newPlanetList = new ArrayList<>();
-                for (Planet p :
-                        planetList) {
+                for (Planet p : planetList) {
                     if (p.getName().toLowerCase().startsWith(s.toLowerCase())){
                         newPlanetList.add(p);
                     }
