@@ -11,7 +11,7 @@ import com.example.planetssearchview.R;
 import com.example.planetssearchview.view.recyclerview.PlanetsAdapter;
 import com.example.planetssearchview.model.Planet;
 import com.example.planetssearchview.network.NetworkInterface;
-import com.example.planetssearchview.repository.PlanetRepository;
+import com.example.planetssearchview.repository.PlanetsRepository;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -40,8 +40,8 @@ public class MainActivity extends AppCompatActivity implements NetworkInterface 
 
     @SuppressLint("CheckResult")
     private void setRecyclerView() {
-        new PlanetRepository()
-                .requestJsonFromRetrofit(this);
+        new PlanetsRepository()
+                .initNetworkCall(this);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
     }
 
