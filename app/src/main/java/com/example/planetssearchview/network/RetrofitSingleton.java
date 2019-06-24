@@ -7,21 +7,29 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class RetrofitSingleton {
 
     private static final String BASE_URL = "https://raw.githubusercontent.com";
-    private static Retrofit singleInstance;
+    private static Retrofit retrofitSingleInstance;
+    private static PlanetsService serviceSingleInstance;
 
     private RetrofitSingleton() {
     }
 
-    public static Retrofit getSingleInstance() {
-        if(singleInstance == null){
-            singleInstance = new Retrofit.Builder()
-                    .baseUrl(BASE_URL)
-                    .addConverterFactory(GsonConverterFactory.create())
-                    .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
-                    .build();
-            return singleInstance;
-        }else{
-            return singleInstance;
+    private static Retrofit getRetrofitSingleInstance() {
+        if (retrofitSingleInstance == null) {
+            retrofitSingleInstance = new Retrofit.Builder()
+              .baseUrl(BASE_URL)
+              .addConverterFactory(GsonConverterFactory.create())
+              .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
+              .build();
+            return retrofitSingleInstance;
+        } else {
+            return retrofitSingleInstance;
         }
+    }
+
+    public static PlanetsService getPlanetsSerivce() {
+        if (serviceSingleInstance == null) {
+            serviceSingleInstance = getRetrofitSingleInstance().create(PlanetsService.class);
+        }
+        return serviceSingleInstance;
     }
 }
