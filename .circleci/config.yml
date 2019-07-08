@@ -1,1 +1,8 @@
 version: 2
+jobs:
+  build:
+    docker:
+      - image: circleci/android:api-28-alpha
+    steps:
+      - checkout
+      - run: echo "Hello Android!"
