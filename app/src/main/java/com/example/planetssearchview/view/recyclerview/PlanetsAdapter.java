@@ -8,22 +8,18 @@ import android.view.ViewGroup;
 
 import com.example.planetssearchview.R;
 import com.example.planetssearchview.model.Planet;
-import com.example.planetssearchview.view.recyclerview.PlanetsViewHolder;
 
+import java.util.LinkedList;
 import java.util.List;
 
 public class PlanetsAdapter extends RecyclerView.Adapter<PlanetsViewHolder> {
 
-    private List<Planet> planets;
-
-    public PlanetsAdapter(List<Planet> planets) {
-        this.planets = planets;
-    }
+    private LinkedList<Planet> planets = new LinkedList<>();
 
     @NonNull
     @Override
     public PlanetsViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
-        View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.planets_item_view,viewGroup,false);
+        View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.planets_item_view, viewGroup, false);
         return new PlanetsViewHolder(view);
     }
 
@@ -37,7 +33,7 @@ public class PlanetsAdapter extends RecyclerView.Adapter<PlanetsViewHolder> {
         return planets.size();
     }
 
-    public void setData(List<Planet> planets){
+    public void setData(LinkedList<Planet> planets) {
         this.planets = planets;
         notifyDataSetChanged();
     }
