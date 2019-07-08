@@ -1,16 +1,16 @@
 package com.example.planetssearchview.model;
 
-import java.util.List;
+import java.util.LinkedList;
 
 public final class PlanetsResponse {
 
-    private final List<Planet> planets;
+    private final LinkedList<Planet> planets;
 
-    public PlanetsResponse(List<Planet> planets) {
+    public PlanetsResponse(LinkedList<Planet> planets) {
         this.planets = planets;
     }
 
-    public List<Planet> getPlanets() {
+    public LinkedList<Planet> getPlanets() {
         return planets;
     }
 }
