@@ -6,7 +6,7 @@ public class AppUnitTest {
     @Test
     public void baseTest() {
         String baseUrl = "https://raw.githubusercontent.com";
-        Assert.assertNull(baseUrl);
+        Assert.assertNotNull(baseUrl);
     }
 
 }
